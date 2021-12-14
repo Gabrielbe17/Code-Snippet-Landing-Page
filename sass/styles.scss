@@ -1,0 +1,168 @@
+@use 'abstracts/index' as *;
+
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+body{
+    font-family: 'Readex Pro', sans-serif;
+    overflow-x: hidden;
+}
+// Container
+.container{
+    min-height: 100vh;
+    // General Styles
+    & > * {
+        width: 100%;
+    }
+    :is(header, main, footer) h1, h2, p{
+        line-height: 1.5em;
+    }
+    li{
+        cursor: pointer;
+    }
+    ul{
+        list-style: none
+    }
+    .btn{
+        @include btn();
+        color: #fff;
+        width: 80%;
+        span{color: $silver;}
+    }
+    .img{
+        width: 80%;
+        height: auto;
+        max-width: 60em;
+        margin: 0 auto;
+    }
+    p{
+        color: $Primary;  
+        opacity: .7;
+    }
+    .header, .main, .footer{
+        max-width: 75em;
+        margin: 0 auto;
+    }
+    // Header Section
+    header{
+        background: url(../Assets/Background.png) no-repeat center;
+        background-size: cover;
+    }
+
+    .header{
+        text-align: center;
+
+        & > *:not(img){
+            padding: 1.5rem
+        }
+        // Nav
+        nav{
+            @include flex(row, space-between);
+            
+
+            .navbar{
+
+                .toggle-menu{
+                    cursor: pointer;
+                    display: none;
+
+                    @media screen and (max-width:600px){
+                        display: flex;
+                    }
+                }
+
+
+                @media screen and (max-width:600px){
+                    width: 100%;
+                    @include flex(row, space-between);
+                }
+            }
+
+            .navsub{
+                @include flex(row, none);
+                gap: 2em;
+                display: none;
+                transition: all .5s ease-in-out;
+                left: -100%;
+
+                @media screen and (min-width: 600px) {
+                    display: flex;
+                    left: 0;
+                }
+
+                // Responsive Toggle Menu
+
+                // @media screen and (max-width:600px) {
+                //     @include flex(column, center);
+                //     color: #fff;
+                //     width: 100%;
+                //     border: .11em solid rgba($color: #000000, $alpha: .75);
+                //     padding: 1.5em;
+                //     background: url(../Assets/Background.png);
+                // }
+            }
+
+            @media screen and (max-width:600px) {
+                flex-direction: column;
+            }
+
+            li{ 
+                @media screen and (max-width:600px){
+                    width: 100%;
+                    @include flex(row, center);
+                }
+            }
+        }
+        // Text
+        &__text{
+            padding: 2em;
+            @include flex(column, center);
+        }
+        &__img{
+            @include flex(row, center);
+        }
+    }
+    // Main Section
+    .main{
+        padding: 3.5em 0;
+        @include grid();
+        gap: 1.25em;
+        width: 100%;
+        height: auto;
+
+        h2{
+            font-size: 1.8rem;
+        }
+        &__text{
+            padding: 1em;   
+        }
+        .btn{
+            width: auto;
+        }   
+        
+        &__img{
+            @media screen and (max-width: 787px) {
+                grid-row: 1;
+            }
+        }
+    }
+    // Footer Section
+    .footer{
+        padding: 1em 1.5em;
+        ul{
+            @include flex(row, none);
+            gap: 1.5em;
+            padding-left: 0;
+
+            li{
+                opacity: .7;
+            }
+        }
+    }
+}
+
+
+
+

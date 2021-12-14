@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+@mixin flex ($direction, $justify){
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: $justify;
+}
+
+@mixin center {
+    display: grid;
+    place-items: center;
+}
+
+@mixin btn{
+    display: inline-block;
+    padding: 1.2em;
+    background-color: $Primary;
+    cursor: pointer;
+    border-radius: .25em;
+}
+
+@mixin grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24em, 1fr));
+    align-items: center;
+}
