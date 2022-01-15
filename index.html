@@ -14,32 +14,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&display=swap" rel="stylesheet"> 
+    <!-- Script -->
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="header">
                 <nav>
-                    <div class="navbar">
+                    <div class="logo">
                         <img src="Assets/Logo.svg" alt="">
-
-                        <!-- Hamburger Menu -->
-                            <img src="Assets/Hamburger Menu.svg" alt="" class="toggle-menu">
-                            <!-- <input type="checkbox" id="check">
-                            <label for="check" class="toggle-menu">
-                                <img src="Assets/Hamburger Menu.svg" alt="">
-                            </label> -->
-                    </div> 
+                    </div>
+                
                     <!-- Navbar Menu -->
-                    <ul class="navsub">
-                        <li>
-                            <img src="Assets/Search Icon.svg" alt="">
-                        </li>
-                        <li>Sign in</li>
-                        <li>
-                            <div class="btn">Get started <span>- it's free</span></div>
-                        </li>
-                    </ul>
+                    <div id="nav-links">
+                        <ul class="navsub">
+                            <li>
+                                <img src="Assets/Search Icon.svg" alt="">
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=2s" target="_blank">Sign in</a></li>
+                            <li>
+                                <div class="btn">Get started <span>- it's free</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Hamburger menu -->
+                    <button id="toggle-menu">
+                        <img src="Assets/Hamburger Menu.svg" alt="">
+                    </button>
                 </nav>
                 
                 <div class="header__text">
